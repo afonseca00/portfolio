@@ -7,6 +7,9 @@ const About = ({ t }) => {
       <div className="space-y-4">
         <p>{t.about.paragraph1}</p>
         <p>{t.about.paragraph2}</p>
+        <p>{t.about.paragraph3}</p>
+        <p>{t.about.paragraph4}</p>
+        <p>{t.about.paragraph5}</p>
       </div>
     </section>
   );

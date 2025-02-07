@@ -14,12 +14,16 @@ const translations = {
     home: {
       title: "Hi, I'm Alexandre Rodrigues",
       subtitle: "Full-Stack Developer passionate about creating innovative solutions",
-      cta: "Let's Talk"
+      cta: "Let's Talk",
+      downloadCV: "Download CV"
     },
     about: {
       title: "About Me",
-      paragraph1: "Recently graduated in Computer Science, with practical experience gained at 42Lisboa and IBM Full Stack Software Developer Professional Certificate. Passionate about software development and always seeking new challenges.",
-      paragraph2: "Specialized in full-stack web development, focusing on modern technologies like React, Node.js, and microservices architectures."
+      paragraph1: "I am a passionate Full-Stack Developer with experience in backend and frontend development, eager to build scalable and efficient applications. My background includes a Bachelor’s degree in Computer Science, complemented by hands-on projects in Node.js, Express.js, MySQL, and Azure.",
+      paragraph2: "My academic final project, Quiz Game Rugby, is a web-based application that features authentication, secure user management, a ranking system, and multilingual support. The project not only allowed me to apply my technical skills, but also to create a user-friendly and engaging platform that enhances the overall experience of rugby fans worldwide.",
+      paragraph3: "I successfully completed the 42Lisboa Piscine, an intensive 26-day bootcamp focused on problem-solving and programming in C, which granted me admission to 42Lisboa, where I later worked on challenging projects.",
+      paragraph4: "To further enhance my expertise, I have completed the IBM Full Stack Software Developer Professional Certificate, covering technologies such as React, Node.js, Django, Python, Docker, Kubernetes, Microservices, and AI applications.",
+      paragraph5: "I thrive in collaborative environments where I can continuously learn, solve complex problems, and contribute to impactful projects. Excited to take on new challenges in software development!"
     },
     nav: {
       home: "Home",
@@ -73,12 +77,16 @@ const translations = {
     home: {
       title: "Olá, sou o Alexandre Rodrigues",
       subtitle: "Full-Stack Developer apaixonado por criar soluções inovadoras",
-      cta: "Vamos Conversar"
+      cta: "Vamos Conversar",
+      downloadCV: "Download CV"
     },
     about: {
       title: "Sobre Mim",
-      paragraph1: "Recém-formado em Informática, com experiência prática adquirida na 42Lisboa e certificação IBM Full Stack Software Developer. Apaixonado por desenvolvimento de software e sempre em busca de novos desafios.",
-      paragraph2: "Especializado em desenvolvimento web full-stack, com foco em tecnologias modernas como React, Node.js e arquiteturas de microserviços."
+      paragraph1: "Sou um Full-Stack Developer apaixonado por criar aplicações escaláveis e eficientes, com experiência tanto em backend quanto em frontend. A minha formação inclui uma Licenciatura em Informática, complementada por projetos práticos em Node.js, Express.js, MySQL e Azure.",
+      paragraph2: "O meu projeto final académico, Quiz Game Rugby, é uma aplicação web que inclui autenticação, gestão de utilizadores segura, sistema de rankings e suporte multilíngue. Este projeto permitiu-me aplicar as minhas competências técnicas, além de criar uma plataforma intuitiva e envolvente que melhora a experiência dos fãs de rugby em todo o mundo.",
+      paragraph3: "Concluí com sucesso a Piscine da 42Lisboa, um bootcamp intensivo de 26 dias focado em resolução de problemas e programação em C, o que me permitiu ser admitido na 42Lisboa, onde trabalhei em projetos desafiadores.",
+      paragraph4: "Para aprimorar ainda mais as minhas competências, completei o IBM Full Stack Software Developer Professional Certificate, cobrindo tecnologias como React, Node.js, Django, Python, Docker, Kubernetes, Microserviços e aplicações de IA.",
+      paragraph5: "Gosto de trabalhar em ambientes colaborativos onde posso continuar a aprender, resolver problemas complexos e contribuir para projetos impactantes. Estou entusiasmado para enfrentar novos desafios em desenvolvimento de software!"
     },
     nav: {
       home: "Início",
@@ -129,6 +137,7 @@ const translations = {
     footer: "© 2025 Alexandre Rodrigues. Todos os direitos reservados."
   }
 };
+
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true);
