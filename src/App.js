@@ -11,7 +11,7 @@ import './index.css';
 const translations = {
   en: {
     home: {
-      title: "Hi, I'm João Silva",
+      title: "Hi, I'm Alexandre Rodrigues",
       subtitle: "Full-Stack Developer passionate about creating innovative solutions",
       cta: "Let's Talk"
     },
@@ -66,11 +66,11 @@ const translations = {
         submit: "Send Message"
       }
     },
-    footer: "© 2025 João Silva. All rights reserved."
+    footer: "© 2025 Alexandre Rodrigues. All rights reserved."
   },
   pt: {
     home: {
-      title: "Olá, sou o João Silva",
+      title: "Olá, sou o Alexandre Rodrigues",
       subtitle: "Full-Stack Developer apaixonado por criar soluções inovadoras",
       cta: "Vamos Conversar"
     },
@@ -125,7 +125,7 @@ const translations = {
         submit: "Enviar Mensagem"
       }
     },
-    footer: "© 2025 João Silva. Todos os direitos reservados."
+    footer: "© 2025 Alexandre Rodrigues. Todos os direitos reservados."
   }
 };
 

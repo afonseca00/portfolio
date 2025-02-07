@@ -12,7 +12,7 @@ const Navbar = ({ darkMode, setDarkMode, language, setLanguage, menuOpen, setMen
   return (
     <nav className="fixed w-full z-10 p-4 backdrop-blur-md bg-opacity-80">
       <div className="max-w-6xl mx-auto flex justify-between items-center">
-        <h1 className="text-xl font-bold">João Silva</h1>
+        <h1 className="text-xl font-bold">Alexandre Rodrigues</h1>
         <div className="hidden md:flex space-x-6">
           <a href="#home" className="hover:text-blue-500">{t.nav.home}</a>
           <a href="#about" className="hover:text-blue-500">{t.nav.about}</a>
