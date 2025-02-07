@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
+import { motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
@@ -133,8 +134,22 @@ const App = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [language, setLanguage] = useState('en');
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate initial loading
+    setTimeout(() => setIsLoading(false), 1000);
+  }, []);
 
   const t = translations[language];
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-blue-600"></div>
+      </div>
+    );
+  }
 
   return (
     <div className={`min-h-screen ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
@@ -148,11 +163,17 @@ const App = () => {
         t={t}
       />
       <main className="max-w-6xl mx-auto px-4">
-        <Home t={t} />
-        <About t={t} />
-        <Projects darkMode={darkMode} t={t} />
-        <Skills darkMode={darkMode} t={t} />
-        <Contact darkMode={darkMode} t={t} />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Home t={t} />
+          <About t={t} />
+          <Projects darkMode={darkMode} t={t} />
+          <Skills darkMode={darkMode} t={t} />
+          <Contact darkMode={darkMode} t={t} />
+        </motion.div>
       </main>
       <Footer darkMode={darkMode} t={t} />
     </div>

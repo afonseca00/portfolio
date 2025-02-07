@@ -1,7 +1,44 @@
 import React from 'react';
 import { Github, Linkedin, Mail } from 'lucide-react';
+import { useState } from 'react';
 
 const Contact = ({ darkMode, t }) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = 'Name is required';
+    if (!formData.email.trim()) newErrors.email = 'Email is required';
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Invalid email format';
+    if (!formData.message.trim()) newErrors.message = 'Message is required';
+    return newErrors;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const newErrors = validateForm();
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
+      setIsSubmitting(true);
+      try {
+        // Simulate API call
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } catch (error) {
+        setSubmitStatus('error');
+      }
+      setIsSubmitting(false);
+    }
+  };
   return (
     <section id="contact" className="py-20">
       <h2 className="text-3xl font-bold mb-8">{t.contact.title}</h2>
