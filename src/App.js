@@ -40,13 +40,13 @@ const translations = {
   en: {
     home: {
       title: "Hi, I'm Alexandre Rodrigues",
-      subtitle: "Full-Stack Developer passionate about creating innovative solutions",
+      subtitle: "Software Developer passionate about creating innovative solutions",
       cta: "Let's Talk",
       downloadCV: "Download CV"
     },
     about: {
       title: "About Me",
-      paragraph1: "I am a passionate Full-Stack Developer with experience in backend and frontend development, eager to build scalable and efficient applications. My background includes a Bachelor’s degree in Computer Science, complemented by hands-on projects in Node.js, Express.js, MySQL, and Azure.",
+      paragraph1: "I am a passionate Software Developer with experience in backend and frontend development, eager to build scalable and efficient applications. My background includes a Bachelor’s degree in Computer Science, complemented by hands-on projects in Node.js, Express.js, MySQL, and Azure.",
       paragraph2: "My capstone project, Dealerships Review Portal, is a web application for a national car dealership that allows users to view dealership information, leave reviews, and see sentiment analysis of those reviews. It includes features such as user roles (anonymous, authorized, and admin), review management, and sentiment analysis using IBM Cloud-based services.",
       paragraph3: "I successfully completed the 42Lisboa Piscine, an intensive 26-day bootcamp focused on problem-solving and programming in C, which granted me admission to 42Lisboa, where I later worked on challenging projects.",
       paragraph4: "To further enhance my expertise, I have completed the IBM Full Stack Software Developer Professional Certificate, covering technologies such as React, Node.js, Django, Python, Docker, Kubernetes, Microservices, and AI applications.",
@@ -158,13 +158,13 @@ const translations = {
   pt: {
     home: {
       title: "Olá, sou o Alexandre Rodrigues",
-      subtitle: "Full-Stack Developer apaixonado por criar soluções inovadoras",
+      subtitle: "Software Developer apaixonado por criar soluções inovadoras",
       cta: "Vamos Conversar",
       downloadCV: "Download CV"
     },
     about: {
       title: "Sobre Mim",
-      paragraph1: "Sou um Full-Stack Developer apaixonado por criar aplicações escaláveis e eficientes, com experiência tanto em backend como em frontend. A minha formação inclui uma Licenciatura em Informática, complementada por projetos práticos em Node.js, Express.js, MySQL e Azure.",
+      paragraph1: "Sou um Software Developer apaixonado por criar aplicações escaláveis e eficientes, com experiência tanto em backend como em frontend. A minha formação inclui uma Licenciatura em Informática, complementada por projetos práticos em Node.js, Express.js, MySQL e Azure.",
       paragraph2: "O meu projeto final de capstone, Dealerships Review Portal, é uma aplicação web para uma rede nacional de concessionárias, permitindo que os utilizadores visualizem informações sobre as concessionárias, deixem avaliações e consultem a análise de sentimentos dessas avaliações. Inclui funcionalidades como diferentes perfis de utilizador (anónimos, autorizados e administradores), gestão de avaliações e análise de sentimentos através de serviços baseados na IBM Cloud.",
       paragraph3: "Concluí com sucesso a Piscine da 42Lisboa, um bootcamp intensivo de 26 dias focado na resolução de problemas e programação em C, o que me permitiu ser admitido na 42Lisboa, onde trabalhei em projetos desafiantes.",
       paragraph4: "Para aprimorar ainda mais as minhas competências, completei o IBM Full Stack Software Developer Professional Certificate, cobrindo tecnologias como React, Node.js, Django, Python, Docker, Kubernetes, microserviços e aplicações de IA.",
