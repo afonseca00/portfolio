@@ -1,9 +1,21 @@
 import React from 'react';
 import { Github } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Link  } from 'react-router-dom';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Projects = ({ darkMode, t }) => {
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
+
   return (
     <motion.section
       id="projects"
@@ -18,30 +30,41 @@ const Projects = ({ darkMode, t }) => {
         {t.projects.items.map((project, index) => (
           <motion.div
             key={index}
-            className={`p-6 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'} 
-                       transition-transform hover:-translate-y-2`}
+            className={`p-6 rounded-lg ${
+              darkMode ? "bg-gray-800" : "bg-gray-100"
+            } transition-transform hover:-translate-y-2`}
             whileHover={{ scale: 1.02 }}
           >
+            {/* Carrossel de imagens */}
             <div className="relative aspect-video mb-4 overflow-hidden rounded-lg">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="object-cover w-full h-full"
-              />
+              <Slider {...sliderSettings}>
+                {project.screenshots?.map((image, i) => (
+                  <img
+                    key={i}
+                    src={image}
+                    alt={`${project.title} - ${i + 1}`}
+                    className="object-cover w-full h-full"
+                  />
+                ))}
+              </Slider>
             </div>
+
             <h3 className="text-xl font-bold mb-4">{project.title}</h3>
             <p className="mb-4">{project.description}</p>
+
+            {/* Tecnologias usadas */}
             <div className="flex flex-wrap gap-2 mb-4">
               {project.tech.map((tech, i) => (
                 <span
                   key={i}
-                  className="px-3 py-1 text-sm rounded-full bg-blue-600 hover:bg-blue-700 
-                           transition-colors"
+                  className="px-3 py-1 text-sm rounded-full bg-blue-600 hover:bg-blue-700 transition-colors text-white"
                 >
                   {tech}
                 </span>
               ))}
             </div>
+
+            {/* Links para GitHub e Live Demo */}
             <div className="flex space-x-4">
               <a
                 href={project.github}
@@ -59,7 +82,6 @@ const Projects = ({ darkMode, t }) => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-green-500 hover:text-green-400 transition-colors"
                 >
-                  <Link to={project.demo} className="mr-2" size={20} />
                   Live Demo
                 </a>
               )}
