@@ -33,6 +33,7 @@ import image9D from './assets/Screenshots_D/dealership_review_submission.png';
 import image10D from './assets/Screenshots_D/deployed_add_review.png';
 import IBMLogo from './assets/IBM_logo.png';
 import Logo42 from './assets/42_Logo.png';
+import Logo_ISTEC from './assets/Logo_ISTEC.png';
 
 
 const translations = {
@@ -65,7 +66,8 @@ const translations = {
         {
           title: "Tackle Trivia - Quiz Game Rugby",
           description: "Interactive platform with Rugby-themed quizzes, rankings, and multilingual support.",
-          tech: ["HTML5", "CSS3", "JavaScript", "Node.js", "Express.js", "MySQL", "JWT", "bcrypt"],
+          tech: ["HTML5", "CSS3", "JavaScript", "Node.js", "Express.js", "MySQL", "JWT", "bcrypt", "Azure"],
+          github: "https://github.com/afonseca00/quiz-game-rugby",
           screenshots: [
             image1L,
             image2L,
@@ -85,6 +87,7 @@ const translations = {
           title: "Dealerships Review Portal",
           description: "Web application to view and leave reviews for car dealerships with sentiment analysis.",
           tech: ["Django", "React", "Node.js", "MongoDB", "IBM Cloud", "Docker", "CI/CD"],
+          github: "https://github.com/afonseca00/IBM_Full_Stack_Application_Development_Capstone_Project",
           screenshots: [
             image1D,
             image2D,
@@ -103,7 +106,7 @@ const translations = {
     certificates: {
       title: "Certificates",
       viewAll: "View All Certificates",
-      viewAllLink: "https://www.linkedin.com/in/yourusername/details/certifications/",
+      viewAllLink: "https://www.credly.com/users/alexandre-rodrigues.3abb7572",
       verify: "Verify",
       items: [
         {
@@ -111,16 +114,22 @@ const translations = {
           issuer: "IBM",
           logo: IBMLogo,
           description: "Professional certification covering full-stack development with React, Node.js, and cloud technologies.",
-          date: "2024",
-          link: "https://www.credly.com/your-badge-link"
+          date: "2025",
+          link: "https://www.credly.com/badges/32b18202-141c-49aa-9128-fd67cdbf8e2e/public_url"
         },
         {
           title: "42Lisboa Piscine",
           issuer: "42Lisboa",
           logo: Logo42,
           description: "Intensive programming bootcamp focused on C programming and problem-solving.",
-          date: "2023",
-          link: "https://42lisboa.com/verify/your-certificate"
+          date: "2024",
+          link: "https://www.linkedin.com/posts/alexandref-rodrigues_42lisboa-42network-school42-activity-6986844537436418049-7W5M?utm_source=share&utm_medium=member_desktop"
+        },
+        {
+          title: "Computer Science",
+          issuer: "Bachelor's degree",
+          logo: Logo_ISTEC,
+          date: "2024",
         }
         // Add more certificates as needed
       ]
@@ -129,9 +138,9 @@ const translations = {
       title: "Skills",
       categories: [
         { category: "Frontend", items: ["HTML5", "CSS3", "JavaScript", "React", "TypeScript"] },
-        { category: "Backend", items: ["Node.js", "Express.js", "Python", "Django"] },
-        { category: "Database", items: ["MySQL", "MongoDB", "PostgreSQL"] },
-        { category: "DevOps", items: ["Docker", "Kubernetes", "Git", "CI/CD"] }
+        { category: "Backend", items: ["Node.js", "Express.js", "Python", "Django", "Java"] },
+        { category: "Base de Dados", items: ["MySQL", "MongoDB", "PostgreSQL"] },
+        { category: "DevOps", items: ["Docker", "Kubernetes", "Git", "CI/CD", "IBM Clound", "Azure"] }
       ]
     },
     contact: {
@@ -155,11 +164,11 @@ const translations = {
     },
     about: {
       title: "Sobre Mim",
-      paragraph1: "Sou um Full-Stack Developer apaixonado por criar aplicações escaláveis e eficientes, com experiência tanto em backend quanto em frontend. A minha formação inclui uma Licenciatura em Informática, complementada por projetos práticos em Node.js, Express.js, MySQL e Azure.",
-      paragraph2: "O meu projeto final de capstone, Dealerships Review Portal, é uma aplicação web para uma rede nacional de concessionárias, permitindo que os usuários visualizem informações sobre as concessionárias, deixem avaliações e vejam a análise de sentimentos dessas avaliações. Inclui recursos como diferentes papéis de usuários (anônimos, autorizados e administradores), gerenciamento de avaliações e análise de sentimentos usando serviços baseados em IBM Cloud.",
-      paragraph3: "Concluí com sucesso a Piscine da 42Lisboa, um bootcamp intensivo de 26 dias focado em resolução de problemas e programação em C, o que me permitiu ser admitido na 42Lisboa, onde trabalhei em projetos desafiadores.",
-      paragraph4: "Para aprimorar ainda mais as minhas competências, completei o IBM Full Stack Software Developer Professional Certificate, cobrindo tecnologias como React, Node.js, Django, Python, Docker, Kubernetes, Microserviços e aplicações de IA.",
-      paragraph5: "Gosto de trabalhar em ambientes colaborativos onde posso continuar a aprender, resolver problemas complexos e contribuir para projetos impactantes. Estou entusiasmado para enfrentar novos desafios em desenvolvimento de software!"
+      paragraph1: "Sou um Full-Stack Developer apaixonado por criar aplicações escaláveis e eficientes, com experiência tanto em backend como em frontend. A minha formação inclui uma Licenciatura em Informática, complementada por projetos práticos em Node.js, Express.js, MySQL e Azure.",
+      paragraph2: "O meu projeto final de capstone, Dealerships Review Portal, é uma aplicação web para uma rede nacional de concessionárias, permitindo que os utilizadores visualizem informações sobre as concessionárias, deixem avaliações e consultem a análise de sentimentos dessas avaliações. Inclui funcionalidades como diferentes perfis de utilizador (anónimos, autorizados e administradores), gestão de avaliações e análise de sentimentos através de serviços baseados na IBM Cloud.",
+      paragraph3: "Concluí com sucesso a Piscine da 42Lisboa, um bootcamp intensivo de 26 dias focado na resolução de problemas e programação em C, o que me permitiu ser admitido na 42Lisboa, onde trabalhei em projetos desafiantes.",
+      paragraph4: "Para aprimorar ainda mais as minhas competências, completei o IBM Full Stack Software Developer Professional Certificate, cobrindo tecnologias como React, Node.js, Django, Python, Docker, Kubernetes, microserviços e aplicações de IA.",
+      paragraph5: "Gosto de trabalhar em ambientes colaborativos onde posso continuar a aprender, resolver problemas complexos e contribuir para projetos impactantes. Estou entusiasmado para enfrentar novos desafios no desenvolvimento de software!"
     },
     nav: {
       home: "Início",
@@ -175,7 +184,8 @@ const translations = {
         {
           title: "Tackle Trivia - Quiz Game Rugby",
           description: "Plataforma interativa com quizzes sobre Rugby, rankings e suporte multilíngue.",
-          tech: ["HTML5", "CSS3", "JavaScript", "Node.js", "Express.js", "MySQL", "JWT", "bcrypt"],
+          tech: ["HTML5", "CSS3", "JavaScript", "Node.js", "Express.js", "MySQL", "JWT", "bcrypt", "Azure"],
+          github: "https://github.com/afonseca00/quiz-game-rugby",
           screenshots: [
             image1L,
             image2L,
@@ -195,6 +205,7 @@ const translations = {
           title: "Dealerships Review Portal",
           description: "Aplicação web para visualizar e deixar avaliações sobre concessionárias de carros com análise de sentimentos.",
           tech: ["Django", "React", "Node.js", "MongoDB", "IBM Cloud", "Docker", "CI/CD"],
+          github: "https://github.com/afonseca00/IBM_Full_Stack_Application_Development_Capstone_Project",
           screenshots: [
             image1D,
             image2D,
@@ -214,14 +225,14 @@ const translations = {
       title: "Habilidades",
       categories: [
         { category: "Frontend", items: ["HTML5", "CSS3", "JavaScript", "React", "TypeScript"] },
-        { category: "Backend", items: ["Node.js", "Express.js", "Python", "Django"] },
+        { category: "Backend", items: ["Node.js", "Express.js", "Python", "Django", "Java"] },
         { category: "Base de Dados", items: ["MySQL", "MongoDB", "PostgreSQL"] },
-        { category: "DevOps", items: ["Docker", "Kubernetes", "Git", "CI/CD"] }
+        { category: "DevOps", items: ["Docker", "Kubernetes", "Git", "CI/CD", "IBM Clound", "Azure"] }
       ]
     },certificates: {
       title: "Certificados",
       viewAll: "Ver Todos os Certificados",
-      viewAllLink: "https://www.linkedin.com/in/yourusername/details/certifications/",
+      viewAllLink: "https://www.credly.com/users/alexandre-rodrigues.3abb7572",
       verify: "Verificar",
       items: [
         {
@@ -230,7 +241,7 @@ const translations = {
           logo: IBMLogo,
           description: "Certificação profissional abrangendo desenvolvimento full-stack com React, Node.js e tecnologias cloud.",
           date: "2024",
-          link: "https://www.credly.com/your-badge-link"
+          link: "https://www.credly.com/badges/32b18202-141c-49aa-9128-fd67cdbf8e2e/public_url"
         },
         {
           title: "42Lisboa Piscine",
@@ -238,7 +249,13 @@ const translations = {
           logo: Logo42,
           description: "Bootcamp intensivo de programação focado em programação em C e resolução de problemas.",
           date: "2023",
-          link: "https://42lisboa.com/verify/your-certificate"
+          link: "https://www.linkedin.com/posts/alexandref-rodrigues_42lisboa-42network-school42-activity-6986844537436418049-7W5M?utm_source=share&utm_medium=member_desktop"
+        },
+        {
+          title: "Informática",
+          issuer: "Licenciatura",
+          logo: Logo_ISTEC,
+          date: "2024",
         }
         // Add more certificates as needed
       ]

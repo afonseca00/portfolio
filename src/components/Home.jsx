@@ -1,6 +1,6 @@
 import React from 'react';
 import perfil from '../assets/perfil.png';
-import curriculo from '../assets/curriculo.pdf';
+import curriculo from '../assets/CV_Alexandre.pdf';
 
 const Home = ({ t }) => {
   return (

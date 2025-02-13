@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone } from 'lucide-react';
+import emailjs from 'emailjs-com';
 
 const Contact = ({ darkMode, t }) => {
   const [formData, setFormData] = useState({
@@ -33,7 +34,13 @@ const Contact = ({ darkMode, t }) => {
     if (Object.keys(newErrors).length === 0) {
       setIsSubmitting(true);
       try {
-        await new Promise(resolve => setTimeout(resolve, 1000)); // Simulação de API
+        // Enviar o e-mail com EmailJS
+        await emailjs.sendForm(
+          'service_nju3pk1', // Substitua pelo seu Service ID
+          'template_kaqe6qf', // Substitua pelo seu Template ID
+          e.target, // O formulário (automático)
+          'uuOO5rMycY0f2r397' // Substitua pela sua Public Key
+        );
         setSubmitStatus('success');
         setFormData({ name: '', email: '', message: '' });
       } catch (error) {
@@ -50,14 +57,18 @@ const Contact = ({ darkMode, t }) => {
         <div>
           <p className="mb-6">{t.contact.description}</p>
           <div className="flex space-x-4">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400">
+            <a href="https://github.com/afonseca00" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400">
               <Github size={24} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400">
+            <a href="https://www.linkedin.com/in/alexandref-rodrigues" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400">
               <Linkedin size={24} />
             </a>
-            <a href="mailto:your@email.com" className="text-blue-500 hover:text-blue-400">
+            <a href="mailto:alexandref.rodrigues8@gmail.com" className="text-blue-500 hover:text-blue-400">
               <Mail size={24} />
+            </a>
+            <Phone size={24} className="text-blue-500" />
+            <a href="tel:+351917673080" className="text-blue-500 hover:text-blue-400">
+            +351 917 673 080
             </a>
           </div>
         </div>
