@@ -5,6 +5,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
+import Certificates from './components/Certificates';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './index.css';
@@ -30,6 +31,8 @@ import image7D from './assets/Screenshots_D/sentiment_analyzer.png';
 import image8D from './assets/Screenshots_D/dealersbystate.png';
 import image9D from './assets/Screenshots_D/dealership_review_submission.png';
 import image10D from './assets/Screenshots_D/deployed_add_review.png';
+import IBMLogo from './assets/IBM_logo.png';
+import Logo42 from './assets/42_Logo.png';
 
 
 const translations = {
@@ -53,6 +56,7 @@ const translations = {
       about: "About",
       projects: "Projects",
       skills: "Skills",
+      certificates: "Certificates", 
       contact: "Contact"
     },
     projects: {
@@ -96,6 +100,31 @@ const translations = {
         }
       ]
     },
+    certificates: {
+      title: "Certificates",
+      viewAll: "View All Certificates",
+      viewAllLink: "https://www.linkedin.com/in/yourusername/details/certifications/",
+      verify: "Verify",
+      items: [
+        {
+          title: "IBM Full Stack Software Developer",
+          issuer: "IBM",
+          logo: IBMLogo,
+          description: "Professional certification covering full-stack development with React, Node.js, and cloud technologies.",
+          date: "2024",
+          link: "https://www.credly.com/your-badge-link"
+        },
+        {
+          title: "42Lisboa Piscine",
+          issuer: "42Lisboa",
+          logo: Logo42,
+          description: "Intensive programming bootcamp focused on C programming and problem-solving.",
+          date: "2023",
+          link: "https://42lisboa.com/verify/your-certificate"
+        }
+        // Add more certificates as needed
+      ]
+    },
     skills: {
       title: "Skills",
       categories: [
@@ -137,6 +166,7 @@ const translations = {
       about: "Sobre",
       projects: "Projetos",
       skills: "Habilidades",
+      certificates: "Certificados",
       contact: "Contacto"
     },
     projects: {
@@ -187,6 +217,30 @@ const translations = {
         { category: "Backend", items: ["Node.js", "Express.js", "Python", "Django"] },
         { category: "Base de Dados", items: ["MySQL", "MongoDB", "PostgreSQL"] },
         { category: "DevOps", items: ["Docker", "Kubernetes", "Git", "CI/CD"] }
+      ]
+    },certificates: {
+      title: "Certificados",
+      viewAll: "Ver Todos os Certificados",
+      viewAllLink: "https://www.linkedin.com/in/yourusername/details/certifications/",
+      verify: "Verificar",
+      items: [
+        {
+          title: "IBM Full Stack Software Developer",
+          issuer: "IBM",
+          logo: IBMLogo,
+          description: "Certificação profissional abrangendo desenvolvimento full-stack com React, Node.js e tecnologias cloud.",
+          date: "2024",
+          link: "https://www.credly.com/your-badge-link"
+        },
+        {
+          title: "42Lisboa Piscine",
+          issuer: "42Lisboa",
+          logo: Logo42,
+          description: "Bootcamp intensivo de programação focado em programação em C e resolução de problemas.",
+          date: "2023",
+          link: "https://42lisboa.com/verify/your-certificate"
+        }
+        // Add more certificates as needed
       ]
     },
     contact: {
@@ -245,6 +299,7 @@ const App = () => {
           <About t={t} />
           <Projects darkMode={darkMode} t={t} />
           <Skills darkMode={darkMode} t={t} />
+          <Certificates darkMode={darkMode} t={t} />
           <Contact darkMode={darkMode} t={t} />
         </motion.div>
       </main>
