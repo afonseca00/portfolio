@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Github } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Slider from "react-slick";
@@ -6,6 +6,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Projects = ({ darkMode, t }) => {
+  const [modalImage, setModalImage] = useState(null);
+  const [modalIndex, setModalIndex] = useState(null); // Índice da imagem
+  const [modalProjectIndex, setModalProjectIndex] = useState(null); // Índice do projeto
+
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -14,6 +18,46 @@ const Projects = ({ darkMode, t }) => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+  };
+
+  // Lidar com o clique na imagem
+  const handleImageClick = (image, projectIndex, imageIndex) => {
+    setModalImage(image);
+    setModalIndex(imageIndex);
+    setModalProjectIndex(projectIndex); // Armazenando o índice do projeto
+  };
+
+  // Fechar o modal
+  const handleCloseModal = () => {
+    setModalImage(null);
+    setModalIndex(null);
+    setModalProjectIndex(null);
+  };
+
+  // Navegar para a próxima imagem
+  const handleNextImage = () => {
+    if (modalProjectIndex !== null && modalIndex !== null) {
+      const project = t.projects.items[modalProjectIndex]; // Pega o projeto pelo índice
+      const screenshots = project.screenshots;
+      if (screenshots && screenshots.length > 0) {
+        const nextIndex = (modalIndex + 1) % screenshots.length;
+        setModalImage(screenshots[nextIndex]);
+        setModalIndex(nextIndex);
+      }
+    }
+  };
+
+  // Navegar para a imagem anterior
+  const handlePrevImage = () => {
+    if (modalProjectIndex !== null && modalIndex !== null) {
+      const project = t.projects.items[modalProjectIndex]; // Pega o projeto pelo índice
+      const screenshots = project.screenshots;
+      if (screenshots && screenshots.length > 0) {
+        const prevIndex = (modalIndex - 1 + screenshots.length) % screenshots.length;
+        setModalImage(screenshots[prevIndex]);
+        setModalIndex(prevIndex);
+      }
+    }
   };
 
   return (
@@ -27,23 +71,23 @@ const Projects = ({ darkMode, t }) => {
     >
       <h2 className="text-3xl font-bold mb-8">{t.projects.title}</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {t.projects.items.map((project, index) => (
+        {t.projects.items.map((project, projectIndex) => (
           <motion.div
-            key={index}
+            key={projectIndex}
             className={`p-6 rounded-lg ${
               darkMode ? "bg-gray-800" : "bg-gray-100"
             } transition-transform hover:-translate-y-2`}
             whileHover={{ scale: 1.02 }}
           >
-            {/* Carrossel de imagens */}
             <div className="relative aspect-video mb-4 overflow-hidden rounded-lg">
               <Slider {...sliderSettings}>
-                {project.screenshots?.map((image, i) => (
+                {project.screenshots?.map((image, imageIndex) => (
                   <img
-                    key={i}
+                    key={imageIndex}
                     src={image}
-                    alt={`${project.title} - ${i + 1}`}
-                    className="object-cover w-full h-full"
+                    alt={`${project.title} - ${imageIndex + 1}`}
+                    className="object-cover w-full h-[200px] cursor-pointer mx-auto"
+                    onClick={() => handleImageClick(image, projectIndex, imageIndex)} // Passa o índice do projeto e da imagem
                   />
                 ))}
               </Slider>
@@ -52,7 +96,6 @@ const Projects = ({ darkMode, t }) => {
             <h3 className="text-xl font-bold mb-4">{project.title}</h3>
             <p className="mb-4">{project.description}</p>
 
-            {/* Tecnologias usadas */}
             <div className="flex flex-wrap gap-2 mb-4">
               {project.tech.map((tech, i) => (
                 <span
@@ -64,7 +107,6 @@ const Projects = ({ darkMode, t }) => {
               ))}
             </div>
 
-            {/* Links para GitHub e Live Demo */}
             <div className="flex space-x-4">
               <a
                 href={project.github}
@@ -89,6 +131,36 @@ const Projects = ({ darkMode, t }) => {
           </motion.div>
         ))}
       </div>
+
+      {modalImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="relative inline-block max-w-[1200px] max-h-[900px] bg-white p-4 rounded-lg">
+            <button
+              className="absolute top-2 right-2 text-white text-3xl bg-red-600 hover:bg-red-700 p-2 rounded-full shadow-md transition-colors"
+              onClick={handleCloseModal}
+            >
+              &times;
+            </button>
+            <button
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-3xl bg-gray-800 p-2 rounded-full hover:bg-gray-700"
+              onClick={handlePrevImage}
+            >
+              &#8592;
+            </button>
+            <button
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-3xl bg-gray-800 p-2 rounded-full hover:bg-gray-700"
+              onClick={handleNextImage}
+            >
+              &#8594;
+            </button>
+            <img
+              src={modalImage}
+              alt="Imagem ampliada"
+              className="object-contain w-full h-full"
+            />
+          </div>
+        </div>
+      )}
     </motion.section>
   );
 };
