@@ -34,12 +34,11 @@ const Contact = ({ darkMode, t }) => {
     if (Object.keys(newErrors).length === 0) {
       setIsSubmitting(true);
       try {
-        // Enviar o e-mail com EmailJS
         await emailjs.sendForm(
-          'service_nju3pk1', // Substitua pelo seu Service ID
-          'template_kaqe6qf', // Substitua pelo seu Template ID
-          e.target, // O formulário (automático)
-          'uuOO5rMycY0f2r397' // Substitua pela sua Public Key
+          'service_nju3pk1',
+          'template_kaqe6qf',
+          e.target, 
+          'uuOO5rMycY0f2r397'
         );
         setSubmitStatus('success');
         setFormData({ name: '', email: '', message: '' });
