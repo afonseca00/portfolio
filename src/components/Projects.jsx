@@ -7,8 +7,8 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Projects = ({ darkMode, t }) => {
   const [modalImage, setModalImage] = useState(null);
-  const [modalIndex, setModalIndex] = useState(null); // Índice da imagem
-  const [modalProjectIndex, setModalProjectIndex] = useState(null); // Índice do projeto
+  const [modalIndex, setModalIndex] = useState(null);
+  const [modalProjectIndex, setModalProjectIndex] = useState(null);
 
   const sliderSettings = {
     dots: true,
@@ -20,24 +20,22 @@ const Projects = ({ darkMode, t }) => {
     autoplaySpeed: 3000,
   };
 
-  // Lidar com o clique na imagem
+
   const handleImageClick = (image, projectIndex, imageIndex) => {
     setModalImage(image);
     setModalIndex(imageIndex);
-    setModalProjectIndex(projectIndex); // Armazenando o índice do projeto
+    setModalProjectIndex(projectIndex);
   };
 
-  // Fechar o modal
   const handleCloseModal = () => {
     setModalImage(null);
     setModalIndex(null);
     setModalProjectIndex(null);
   };
 
-  // Navegar para a próxima imagem
   const handleNextImage = () => {
     if (modalProjectIndex !== null && modalIndex !== null) {
-      const project = t.projects.items[modalProjectIndex]; // Pega o projeto pelo índice
+      const project = t.projects.items[modalProjectIndex];
       const screenshots = project.screenshots;
       if (screenshots && screenshots.length > 0) {
         const nextIndex = (modalIndex + 1) % screenshots.length;
@@ -47,10 +45,9 @@ const Projects = ({ darkMode, t }) => {
     }
   };
 
-  // Navegar para a imagem anterior
   const handlePrevImage = () => {
     if (modalProjectIndex !== null && modalIndex !== null) {
-      const project = t.projects.items[modalProjectIndex]; // Pega o projeto pelo índice
+      const project = t.projects.items[modalProjectIndex];
       const screenshots = project.screenshots;
       if (screenshots && screenshots.length > 0) {
         const prevIndex = (modalIndex - 1 + screenshots.length) % screenshots.length;
@@ -63,20 +60,18 @@ const Projects = ({ darkMode, t }) => {
   return (
     <motion.section
       id="projects"
-      className="py-20"
+      className="py-20 px-6"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="text-3xl font-bold mb-8">{t.projects.title}</h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10">{t.projects.title}</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
         {t.projects.items.map((project, projectIndex) => (
           <motion.div
             key={projectIndex}
-            className={`p-6 rounded-lg ${
-              darkMode ? "bg-gray-800" : "bg-gray-100"
-            } transition-transform hover:-translate-y-2`}
+            className={`p-6 rounded-lg ${darkMode ? "bg-gray-800" : "bg-gray-100"} transition-transform hover:-translate-y-2`}
             whileHover={{ scale: 1.02 }}
           >
             <div className="relative aspect-video mb-4 overflow-hidden rounded-lg">
