@@ -62,6 +62,7 @@ const translations = {
     },
     projects: {
       title: "Projects",
+      viewMore: "View More Projects",
       items: [
         {
           title: "Tackle Trivia - Quiz Game Rugby",
@@ -131,7 +132,6 @@ const translations = {
           logo: Logo_ISTEC,
           date: "2024",
         }
-        // Add more certificates as needed
       ]
     },
     skills: {
@@ -180,6 +180,7 @@ const translations = {
     },
     projects: {
       title: "Projetos",
+      viewMore: "Ver mais projetos",
       items: [
         {
           title: "Tackle Trivia - Quiz Game Rugby",
@@ -257,7 +258,6 @@ const translations = {
           logo: Logo_ISTEC,
           date: "2024",
         }
-        // Add more certificates as needed
       ]
     },
     contact: {

@@ -20,7 +20,6 @@ const Projects = ({ darkMode, t }) => {
     autoplaySpeed: 3000,
   };
 
-
   const handleImageClick = (image, projectIndex, imageIndex) => {
     setModalImage(image);
     setModalIndex(imageIndex);
@@ -82,7 +81,7 @@ const Projects = ({ darkMode, t }) => {
                     src={image}
                     alt={`${project.title} - ${imageIndex + 1}`}
                     className="object-cover w-full h-[200px] cursor-pointer mx-auto"
-                    onClick={() => handleImageClick(image, projectIndex, imageIndex)} // Passa o índice do projeto e da imagem
+                    onClick={() => handleImageClick(image, projectIndex, imageIndex)}
                   />
                 ))}
               </Slider>
@@ -125,6 +124,17 @@ const Projects = ({ darkMode, t }) => {
             </div>
           </motion.div>
         ))}
+      </div>
+      <div className="flex justify-center mt-10">
+        <a
+          href="https://github.com/afonseca00?tab=repositories"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg rounded-lg shadow-md transition-all flex items-center gap-2"
+        >
+          <Github size={20} />
+          <span className="ml-2">{t.projects.viewMore}</span>
+        </a>
       </div>
 
       {modalImage && (
